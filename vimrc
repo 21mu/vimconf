@@ -9,15 +9,18 @@ call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
-Plugin 'Rip-Rip/clang_complete'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'msanders/snipmate.vim'
 
 "this is from vim-script
 "format is "plugin-name"
 Plugin 'The-NERD-tree'
 Plugin 'a.vim'
+Plugin 'ctrlp.vim'
 
 call vundle#end()
 
@@ -33,6 +36,7 @@ set shiftwidth=4
 set expandtab
 set showmatch
 set hidden
+set guifont=Monospace\ 9
 
 colorscheme desert
 syntax on
@@ -56,6 +60,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"auto_format
+noremap <F3> :Autoformat<CR>
+
+au BufWrite * :Autoformat
+
+
 "切换buffer
 nnoremap <C-left> :bp<CR>
 nnoremap <C-right> :bn<CR>
@@ -67,18 +77,10 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 
 "enable vim-airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 "set supertab
 let g:SuperTabDefaultCompletionType = "context"
-
-"configure for clang_complete
-let g:clang_use_library = 1
-let g:clang_library_path = '/usr/lib/llvm-3.4/lib'
-let g:clang_snippets = 1
-let g:clang_complete_auto = 0
-let g:clang_complete_copen = 1
-set completeopt=longest,menu,menuone
 
 "settings for TagBar
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
