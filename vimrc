@@ -3,8 +3,11 @@ set nocompatible
 filetype off
 
 "vundle runtime path
-set rtp+=$VIM/vimfiles/bundle/Vundle.vim
-
+if(has("win32"))
+    set rtp+=$VIM/vimfiles/bundle/Vundle.vim
+else
+    set rtp+=$HOME/.vim/bundle/Vundle.vim
+endif
 
 "this is vundle package from github
 "format "user/repo"
@@ -48,11 +51,16 @@ set shiftwidth=4
 set expandtab
 set showmatch
 set hidden
-set guifont=Source_Code_Pro:h10,DejaVu\ Sans\ Mono:h10,Consolas:h10
 set nobackup
 set laststatus=2
 "set autochdir
 "autocmd BufEnter * silent! lcd %:p:h
+
+if(has("mac"))
+    set guifont=Monaco:h14
+else
+    set guifont=Source_Code_Pro:h10,DejaVu\ Sans\ Mono:h10,Consolas:h10
+endif
 set noswapfile
 set noundofile
 set completeopt=menu,menuone,longest
