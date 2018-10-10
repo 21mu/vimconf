@@ -57,7 +57,7 @@ set laststatus=2
 "autocmd BufEnter * silent! lcd %:p:h
 
 if(has("mac"))
-    set guifont=Monaco:h14
+    set guifont=Monaco:h12
 else
     set guifont=Source_Code_Pro:h10,DejaVu\ Sans\ Mono:h10,Consolas:h10
 endif
