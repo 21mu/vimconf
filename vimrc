@@ -31,6 +31,7 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'godlygeek/csapprox'
 Plugin 'mbbill/undotree'
 Plugin 'godlygeek/tabular'
+Plugin 'gu-fan/riv.vim'
 
 
 call vundle#end()
@@ -53,6 +54,7 @@ set showmatch
 set hidden
 set nobackup
 set laststatus=2
+set foldmethod=marker
 "set autochdir
 "autocmd BufEnter * silent! lcd %:p:h
 
